@@ -34,7 +34,11 @@ class PrivacyVaultConfig {
     this.shieldColor = const Color(0xEB0A0A0C),
     this.inactivityTimeout,
     this.lockOnInactivity = false,
+    this.backgroundGracePeriod,
     this.maskSensitiveDataByDefault = false,
+    this.pinLength = 4,
+    this.correctPin,
+    this.shufflePinKeypad = false,
     this.customShieldBuilder,
     this.customLockScreenBuilder,
     this.onLocked,
@@ -59,8 +63,20 @@ class PrivacyVaultConfig {
   /// Whether to require unlocking when [inactivityTimeout] is reached.
   final bool lockOnInactivity;
 
+  /// Grace period before backgrounding locks the app (useful for 2FA authenticator apps).
+  final Duration? backgroundGracePeriod;
+
   /// Initial state for masking sensitive data (e.g., account balances).
   final bool maskSensitiveDataByDefault;
+
+  /// Length of PIN digits when using built-in PIN pad (4 or 6 digits).
+  final int pinLength;
+
+  /// Correct PIN required to unlock when using built-in PIN verification.
+  final String? correctPin;
+
+  /// Randomly shuffles the keypad numbers on each launch to prevent shoulder-surfing.
+  final bool shufflePinKeypad;
 
   /// Custom widget builder for the app-switcher background shield.
   final WidgetBuilder? customShieldBuilder;

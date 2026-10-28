@@ -1,6 +1,6 @@
 name: flutter_privacy_vault
 description: Security and privacy vault for Flutter. App-switcher privacy shield, inactivity auto-lock with biometrics, and sensitive balance masking.
-version: 1.0.0
+version: 1.1.0
 homepage: https://github.com/govindtank/flutter_privacy_vault
 repository: https://github.com/govindtank/flutter_privacy_vault
 issue_tracker: https://github.com/govindtank/flutter_privacy_vault/issues

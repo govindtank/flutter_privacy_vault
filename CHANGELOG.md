@@ -1,3 +1,10 @@
+## 1.1.0
+
+- **Built-in `VaultPinPad` Widget**: High-security numeric PIN keypad with optional randomized keypad shuffling (`shuffleKeypad: true`) to prevent shoulder-surfing.
+- **Timed Auto-Reobscure for `PrivacyMask`**: Added `autoObscureDuration` to automatically obscure revealed values after a configured duration (e.g. 5 seconds).
+- **Inline Eye Toggle Button**: Added `showEyeButton: true` for convenient 1-tap revealing/obscuring of individual fields.
+- **Background Grace Period**: Added `backgroundGracePeriod` to avoid premature locking during rapid app transitions (such as copying 2FA authenticator codes).
+
 ## 1.0.0
 
 - Initial release of `flutter_privacy_vault`.
