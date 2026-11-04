@@ -9,6 +9,10 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square" alt="License"></a>
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/govindtank/flutter_privacy_vault/main/doc/assets/privacy_vault_showcase.svg" alt="flutter_privacy_vault Showcase" width="100%">
+</p>
+
 A production security and privacy vault for Flutter applications. Built for Fintech, Banking, Crypto, and Healthcare apps requiring **app-switcher privacy shielding, inactivity auto-locking with biometric unlock, and selective sensitive data masking**.
 
 ---

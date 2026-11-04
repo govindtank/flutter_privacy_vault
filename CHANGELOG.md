@@ -1,3 +1,8 @@
+## 1.2.0
+
+- **Showcase Visuals**: Added crisp dark-mode vector SVG showcase banner in README documentation.
+- **Cleaner Distribution**: Excluded example platform directories via `.pubignore` for a smaller package archive.
+
 ## 1.1.0
 
 - **Built-in `VaultPinPad` Widget**: High-security numeric PIN keypad with optional randomized keypad shuffling (`shuffleKeypad: true`) to prevent shoulder-surfing.
