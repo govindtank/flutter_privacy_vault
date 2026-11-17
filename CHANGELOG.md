@@ -1,3 +1,21 @@
+## 1.3.0
+
+* **Bank-Grade PII Masking Engine (`PrivacyMasker`)**: Comprehensive masking algorithms inspired by Indian banking standards (HDFC, SBI, ICICI, Axis, Zerodha, UIDAI):
+  * **Birthdate Masking**: Mask Day and Month while preserving Year (`XX/XX/1995`) for KYC age verification, or mask Year (`15/08/XXXX`), or full date masking.
+  * **Mobile Number Masking**: Standard Indian banking format (`+91 ******1234` or `XXXXXX1234`) with customizable visible leading/trailing digits, mask character (`X`, `*`, `•`), and country code preservation.
+  * **Email Masking**: Shields username while keeping domain visible (`g********k@hdfcbank.com`), with customizable leading/trailing character counts and optional domain shielding (`@h******k.com`).
+  * **Address Masking**: Hides street and premise/flat numbers (`Flat ***, ***************`) while preserving locality, city, state, and partial PIN code (`Bengaluru, Karnataka - 560***`).
+  * **General Masking & Banking Presets**: Customizable generic string masker, plus built-in official formats for UIDAI Aadhaar (`XXXX XXXX 1234`), Income Tax PAN (`XXXXX1234X`), Bank Account Number (`XXXXXXXX4892`), and Payment Cards (`•••• •••• •••• 6789`).
+  * **Convenience String Extensions**: Direct inline extensions (`'9876543210'.maskMobile()`, `'user@bank.com'.maskEmail()`, `'15/08/1995'.maskBirthdate()`, `'Flat 402, ...'.maskAddress()`).
+* **New `PrivacyValue` Widget**: Production-ready banking widget rendering sensitive PII with:
+  * 1-tap eye reveal/obscure toggle.
+  * Timed auto-reobscure duration to prevent shoulder-surfing.
+  * One-click secure clipboard copy (with optional masked copy).
+  * Discreet status badges (`MASKED` / `VISIBLE`).
+  * Reacts to global `PrivacyVaultController.isDataMasked` automatically.
+* **Interactive Live Demo Showcase**: Overhauled web showcase with live interactive customization sliders, dropdowns, and toggles for all 5 masking categories.
+* **Introductory Showcase Graphics**: Added dedicated working vector demonstration diagrams (`bank_pii_masking_demo.svg` & updated `privacy_vault_showcase.svg`) visually illustrating working UI cards with zero unnecessary prose.
+
 ## 1.2.1
 
 * **Discovery & Metadata**: Added official funding channels and refined search discovery topics.

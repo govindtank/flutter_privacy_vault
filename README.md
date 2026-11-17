@@ -10,126 +10,141 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/govindtank/flutter_privacy_vault/main/doc/assets/privacy_vault_showcase.svg" alt="flutter_privacy_vault Showcase" width="100%">
+  <img src="https://raw.githubusercontent.com/govindtank/flutter_privacy_vault/main/doc/assets/bank_pii_masking_demo.svg" alt="flutter_privacy_vault Bank Masking Showcase" width="100%">
 </p>
 
-A production security and privacy vault for Flutter applications. Built for Fintech, Banking, Crypto, and Healthcare apps requiring **app-switcher privacy shielding, inactivity auto-locking with biometric unlock, and selective sensitive data masking**.
+A production security and privacy vault for Flutter applications. Built for Fintech, Banking, Crypto, and Healthcare apps requiring **Indian bank-grade PII masking (Birthdate, Mobile, Email, Address, Aadhaar, PAN), app-switcher privacy shielding, inactivity auto-locking with biometric unlock, and sensitive balance masking**.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/govindtank/flutter_privacy_vault/main/doc/assets/privacy_vault_showcase.svg" alt="flutter_privacy_vault Architecture Showcase" width="100%">
+</p>
 
 ---
 
-## ⚡ Why `flutter_privacy_vault`?
+## ⚡ Key Features
 
-Mobile operating systems automatically capture snapshots of your application interface when users switch apps or open the multitasking tray. For banking and confidential apps, this leaks account balances, card numbers, and confidential records.
-
-`flutter_privacy_vault` provides a declarative, zero-native-headache solution:
-
-* 🛡️ **App-Switcher Privacy Shield**: Detects when the app loses focus or enters the background, instantly overlaying a frosted Gaussian blur or branded lock screen.
-* ⏱️ **Idle Inactivity Lock**: Tracks user touch, pointer, and keyboard interactions across the entire widget hierarchy. If the user is idle past your configured threshold (e.g. 60 seconds), it automatically locks the screen and triggers your biometric/PIN prompt.
-* 👁️ **Sensitive Data Masking**: `PrivacyMask` widget allows wrapping balances (`$142,850.75` ➔ `••••••••` or Gaussian blur) with a global or localized toggle.
-* 🌐 **Multi-Platform**: Pure Flutter implementation with zero platform channel crashes across iOS, Android, Web, macOS, Windows, and Linux.
-
----
-
-## 🚀 Features
-
-| Feature | Description |
-|---|---|
-| **🛡️ Background Privacy Shield** | Automatic Gaussian blur or custom branded overlay when the app moves to background or the multitasking switcher. |
-| **⏱️ Inactivity Auto-Lock** | Listens to all user interaction events with zero UI performance penalty; locks vault upon timeout. |
-| **👁️ PrivacyMask Widget** | Selective masking for numbers and text with `bullets` (`••••••••`), `blur`, or `redacted` styles. |
-| **📱 Biometric / PIN Hooks** | Simple callbacks (`onLocked`, `onUnlocked`) to wire into `local_auth` or custom PIN pads. |
-| **⚡ Reactive Controller** | Global `PrivacyVaultController` to query `isLocked`, `isDataMasked`, or manually trigger locks. |
+| Feature | Description | Inspired By |
+|---|---|---|
+| **1. Mobile Masking** | Preserves country code (`+91`), masks middle digits, reveals trailing 4 digits (`+91 ******3210`) | HDFC / SBI / ICICI |
+| **2. Email Masking** | Shields username while keeping domain intact (`g********k@gmail.com`), optional domain shielding | Axis / Zerodha / Groww |
+| **3. Birthdate Masking** | Masks Day & Month while keeping Year visible (`XX/XX/1995`) for KYC age verification | Indian Banking KYC |
+| **4. Address Masking** | Hides flat & street details while keeping locality, city, state & partial PIN (`Bengaluru 560***`) | Bank Statements / Credit Cards |
+| **5. General Masking** | Official UIDAI Aadhaar (`XXXX XXXX 1234`), Income Tax PAN (`XXXXX1234X`), and Bank Account masking | UIDAI / IT-Dept / RBI |
+| **Interactive `PrivacyValue`** | 1-tap eye reveal toggle, timed auto-reobscure (5s), and secure clipboard copy | Production Banking Apps |
+| **App-Switcher Shield** | Blurs or obscures the app snapshot when backgrounded or in multitasking tray | iOS & Android Security |
+| **Inactivity Auto-Lock** | Detects idle touch, pointer, and key events, locking the vault with shuffled PIN pad | FINTECH Compliance |
 
 ---
 
-## 📦 Installation
+## 🚀 Quick Usage
 
-Add `flutter_privacy_vault` to your `pubspec.yaml`:
+### 1. Bank-Grade PII Masking with `PrivacyValue` Widget
 
-```bash
-flutter pub add flutter_privacy_vault
+```dart
+// 1. Mobile Number Masking (e.g. +91 ******3210)
+PrivacyValue.mobile(
+  value: '+91 9876543210',
+  label: 'Registered Mobile',
+  visibleTrailing: 4,
+  maskChar: 'X',
+  showEyeToggle: true,
+  showCopyButton: true,
+  autoObscureDuration: const Duration(seconds: 5),
+)
+
+// 2. Email Masking (e.g. g********k@hdfcbank.com)
+PrivacyValue.email(
+  value: 'govind.tank@hdfcbank.com',
+  label: 'Registered Email',
+  visibleLeading: 1,
+  visibleTrailing: 1,
+  showEyeToggle: true,
+)
+
+// 3. Birthdate Masking for KYC (e.g. XX/XX/1995 or 15/08/XXXX)
+PrivacyValue.birthdate(
+  value: '15/08/1995',
+  label: 'Date of Birth',
+  dateStyle: DateMaskStyle.dayAndMonth, // or yearOnly, dayAndYear, full
+)
+
+// 4. Address Masking (e.g. Flat ***, ***************, Bengaluru 560***)
+PrivacyValue.address(
+  value: 'Flat 402, Lotus Residency, MG Road, Bengaluru, Karnataka 560038',
+  label: 'Communication Address',
+  addressLevel: AddressMaskLevel.streetAndPremise,
+  visiblePinDigits: 3,
+)
+
+// 5. Official Indian Banking Presets
+PrivacyValue(value: '5432 9876 1234', type: PrivacyValueType.aadhaar)   // XXXX XXXX 1234
+PrivacyValue(value: 'ABCDE1234F', type: PrivacyValueType.pan)           // XXXXX1234X
+PrivacyValue(value: '50100234589211', type: PrivacyValueType.bankAccount) // XXXXXXXX9211
 ```
 
 ---
 
-## 💡 Quick Start
-
-### 1. Wrap your App Root in `PrivacyVault`
+### 2. Pure Dart `PrivacyMasker` & String Extensions
 
 ```dart
-import 'package:flutter/material.dart';
 import 'package:flutter_privacy_vault/flutter_privacy_vault.dart';
 
-void main() => runApp(const MyApp());
+// Mobile Phone
+'+91 9876543210'.maskMobile(); // '+91 XXXXXX3210'
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// Email
+'govindtank@gmail.com'.maskEmail(); // 'g********k@gmail.com'
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      builder: (context, child) {
-        return PrivacyVault(
-          config: PrivacyVaultConfig(
-            enableBackgroundShield: true,
-            inactivityTimeout: const Duration(minutes: 2),
-            lockOnInactivity: true,
-            onLocked: () => print('Vault locked!'),
-          ),
-          child: child ?? const SizedBox.shrink(),
-        );
-      },
-      home: const BankingHomeScreen(),
+// Birthdate (Day & Month masked for KYC)
+'15/08/1995'.maskBirthdate(); // 'XX/XX/1995'
+'15/08/1995'.maskBirthdate(style: DateMaskStyle.yearOnly); // '15/08/XXXX'
+
+// Postal Address
+'Flat 402, Lotus Residency, MG Road, Bengaluru 560038'.maskAddress();
+// 'Flat ***, ***************, MG Road, Bengaluru 560***'
+
+// Aadhaar & PAN Card
+'5432 9876 1234'.maskAadhaar(); // 'XXXX XXXX 1234'
+'ABCDE1234F'.maskPan();         // 'XXXXX1234X'
+```
+
+---
+
+### 3. App-Switcher Shield & Inactivity Lock Setup
+
+```dart
+MaterialApp(
+  builder: (context, child) {
+    return PrivacyVault(
+      config: PrivacyVaultConfig(
+        enableBackgroundShield: true,
+        inactivityTimeout: const Duration(seconds: 45),
+        lockOnInactivity: true,
+        maskSensitiveDataByDefault: true,
+        correctPin: '1234',
+        shufflePinKeypad: true,
+      ),
+      child: child!,
     );
-  }
-}
+  },
+  home: const BankingDashboard(),
+);
 ```
 
 ---
 
-### 2. Mask Sensitive Balances & Fields
+### 4. Global Programmatic Controls
 
 ```dart
-// Bullets masking ($14,250.00 -> ••••••••)
-PrivacyMask(
-  style: MaskingStyle.bullets,
-  child: Text(
-    '\$14,250.00',
-    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-  ),
-)
-
-// Gaussian blur masking
-PrivacyMask(
-  style: MaskingStyle.blur,
-  blurSigma: 6.0,
-  child: Text('Card: 4820 9182 4410 9921'),
-)
-```
-
----
-
-### 3. Programmatic Controls
-
-```dart
-// Toggle masking for all PrivacyMask widgets in your app
+// Toggle masking globally for all PrivacyValue and PrivacyMask widgets
 PrivacyVaultController.toggleDataMasking();
 
 // Manually lock vault (e.g. user taps "Lock Now")
 PrivacyVaultController.lock();
 
-// Unlock vault (e.g. after successful fingerprint check)
+// Unlock vault (e.g. after biometric fingerprint check)
 PrivacyVaultController.unlock();
 ```
-
----
-
-## 🔗 Related Packages by Author
-
-* **[ai_stream_bubble](https://pub.dev/packages/ai_stream_bubble)** — High-performance streaming AI message bubble with DeepSeek/Claude reasoning accordions.
-* **[flutter_sonner](https://pub.dev/packages/flutter_sonner)** — Opinionated stacked action toast & notification HUD with spring physics.
-* **[ai_voice_orb](https://pub.dev/packages/ai_voice_orb)** — Fluid neural voice orb for Conversational AI & voice agents.
-* **[spatial_card](https://pub.dev/packages/spatial_card)** — 3D tactile interactive cards & multi-plane parallax surfaces.
 
 ---
 

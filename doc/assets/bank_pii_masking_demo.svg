@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080C15" />
+      <stop offset="50%" stop-color="#0B132B" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="680" fill="url(#bg)" />
+
+  <!-- Grid subtle overlay -->
+  <g stroke="#1E293B" stroke-opacity="0.25" stroke-width="1">
+    <path d="M0,68 H1200 M0,136 H1200 M0,204 H1200 M0,272 H1200 M0,340 H1200 M0,408 H1200 M0,476 H1200 M0,544 H1200 M0,612 H1200" />
+    <path d="M68,0 V680 M136,0 V680 M204,0 V680 M272,0 V680 M340,0 V680 M408,0 V680 M476,0 V680 M544,0 V680 M612,0 V680 M680,0 V680 M748,0 V680 M816,0 V680 M884,0 V680 M952,0 V680 M1020,0 V680 M1088,0 V680 M1156,0 V680" />
+  </g>
+
+  <!-- Glow circles -->
+  <circle cx="200" cy="180" r="180" fill="#10B981" opacity="0.06" />
+  <circle cx="1000" cy="480" r="220" fill="#06B6D4" opacity="0.05" />
+
+  <!-- Header Banner -->
+  <g transform="translate(60, 45)">
+    <!-- Shield Icon -->
+    <rect width="44" height="44" rx="10" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1.5" />
+    <path d="M22 10 L33 15 V24 C33 30.5 28.3 35 22 37 C15.7 35 11 30.5 11 24 V15 Z" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linejoin="round" />
+    <path d="M18 23.5 L20.5 26 L26 20.5" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+
+    <text x="60" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" fill="#F8FAFC">
+      Indian Bank-Grade PII Masking Showcase
+    </text>
+    <text x="60" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8">
+      Customizable visual masking for Birthdate, Mobile, Email, Address, and Financial IDs
+    </text>
+
+    <!-- Global Switch Badge -->
+    <g transform="translate(860, 4)">
+      <rect width="210" height="34" rx="17" fill="#064E3B" fill-opacity="0.5" stroke="#10B981" stroke-width="1.2" />
+      <circle cx="20" cy="17" r="6" fill="#10B981" />
+      <text x="36" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#34D399">Global PII Masking: ON</text>
+    </g>
+  </g>
+
+  <!-- CARD 1: Mobile Number Masking (Top Left) -->
+  <g transform="translate(60, 125)" filter="url(#shadow)">
+    <rect width="520" height="235" rx="16" fill="url(#cardGrad)" stroke="#1F2937" stroke-width="1.5" />
+    
+    <!-- Title -->
+    <circle cx="28" cy="28" r="14" fill="#10B981" fill-opacity="0.15" />
+    <text x="28" y="33" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold" fill="#10B981">1</text>
+    <text x="52" y="33" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Mobile Number Masking</text>
+    <text x="52" y="50" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94A3B8">HDFC / SBI Standard • Visible prefix &amp; trailing digits</text>
+
+    <!-- Value Display Box -->
+    <g transform="translate(24, 68)">
+      <rect width="472" height="64" rx="10" fill="#030712" stroke="#1F2937" />
+      <text x="16" y="24" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" fill="#64748B" letter-spacing="0.5">REGISTERED INDIAN MOBILE</text>
+      <text x="16" y="50" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#67E8F9">+91 XXXXXX3210</text>
+      
+      <!-- Badges & Action Buttons -->
+      <rect x="290" y="20" width="62" height="24" rx="6" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1" />
+      <text x="321" y="36" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#34D399">MASKED</text>
+      
+      <!-- Eye Icon -->
+      <circle cx="385" cy="32" r="15" fill="#1F2937" />
+      <ellipse cx="385" cy="32" rx="7" ry="4.5" fill="none" stroke="#10B981" stroke-width="1.5" />
+      <circle cx="385" cy="32" r="2.2" fill="#10B981" />
+      
+      <!-- Copy Icon -->
+      <circle cx="425" cy="32" r="15" fill="#1F2937" />
+      <rect x="420" y="27" width="9" height="11" rx="2" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    </g>
+
+    <!-- Customization Chips -->
+    <g transform="translate(24, 150)">
+      <!-- Chip 1: Mask Char -->
+      <rect x="0" y="0" width="130" height="34" rx="8" fill="#1E293B" stroke="#334155" />
+      <text x="12" y="21" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#94A3B8">Char: <tspan fill="#34D399" font-weight="bold">'X' / '*' / '•'</tspan></text>
+      
+      <!-- Chip 2: Trailing -->
+      <rect x="142" y="0" width="145" height="34" rx="8" fill="#1E293B" stroke="#334155" />
+      <text x="12" y="21" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#94A3B8" transform="translate(142, 0)">Visible Trail: <tspan fill="#67E8F9" font-weight="bold">4 digits</tspan></text>
+
+      <!-- Chip 3: Country Code -->
+      <rect x="299" y="0" width="173" height="34" rx="8" fill="#1E293B" stroke="#334155" />
+      <text x="12" y="21" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#94A3B8" transform="translate(299, 0)">Keep Code: <tspan fill="#34D399" font-weight="bold">+91 Enabled</tspan></text>
+    </g>
+    
+    <text x="24" y="216" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#64748B">PrivacyValue.mobile(value: '+91 9876543210', maskChar: 'X')</text>
+  </g>
+
+  <!-- CARD 2: Email Masking (Top Right) -->
+  <g transform="translate(620, 125)" filter="url(#shadow)">
+    <rect width="520" height="235" rx="16" fill="url(#cardGrad)" stroke="#1F2937" stroke-width="1.5" />
+    
+    <!-- Title -->
+    <circle cx="28" cy="28" r="14" fill="#06B6D4" fill-opacity="0.15" />
+    <text x="28" y="33" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold" fill="#06B6D4">2</text>
+    <text x="52" y="33" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Email Masking</text>
+    <text x="52" y="50" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94A3B8">Shields username while retaining domain • Optional domain masking</text>
+
+    <!-- Value Display Box -->
+    <g transform="translate(24, 68)">
+      <rect width="472" height="64" rx="10" fill="#030712" stroke="#1F2937" />
+      <text x="16" y="24" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" fill="#64748B" letter-spacing="0.5">REGISTERED ACCOUNT EMAIL</text>
+      <text x="16" y="50" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="700" fill="#FCD34D">g********k@hdfcbank.com</text>
+      
+      <!-- Badges & Action Buttons -->
+      <rect x="290" y="20" width="62" height="24" rx="6" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1" />
+      <text x="321" y="36" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#34D399">MASKED</text>
+      
+      <!-- Eye Icon -->
+      <circle cx="385" cy="32" r="15" fill="#1F2937" />
+      <ellipse cx="385" cy="32" rx="7" ry="4.5" fill="none" stroke="#10B981" stroke-width="1.5" />
+      <circle cx="385" cy="32" r="2.2" fill="#10B981" />
+      
+      <!-- Copy Icon -->
+      <circle cx="425" cy="32" r="15" fill="#1F2937" />
+      <rect x="420" y="27" width="9" height="11" rx="2" fill="none" stroke="#94A3B8" stroke-width="1.5" />
+    </g>
+
+    <!-- Customization Chips -->
+    <g transform="translate(24, 150)">
+      <rect x="0" y="0" width="145" height="34" rx="8" fill="#1E293B" stroke="#334155" />
+      <text x="12" y="21" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#94A3B8">Leading: <tspan fill="#FCD34D" font-weight="bold">1 char ('g')</tspan></text>
+      
+      <rect x="157" y="0" width="145" height="34" rx="8" fill="#1E293B" stroke="#334155" />
+      <text x="12" y="21" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#94A3B8" transform="translate(157, 0)">Trailing: <tspan fill="#FCD34D" font-weight="bold">1 char ('k')</tspan></text>
+
+      <rect x="314" y="0" width="158" height="34" rx="8" fill="#1E293B" stroke="#334155" />
+      <text x="12" y="21" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#94A3B8" transform="translate(314, 0)">Domain Mask: <tspan fill="#38BDF8" font-weight="bold">Optional</tspan></text>
+    </g>
+    
+    <text x="24" y="216" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#64748B">PrivacyValue.email(value: 'govind.tank@hdfcbank.com')</text>
+  </g>
+
+  <!-- CARD 3: Birthdate Masking (Bottom Left) -->
+  <g transform="translate(60, 390)" filter="url(#shadow)">
+    <rect width="340" height="245" rx="16" fill="url(#cardGrad)" stroke="#1F2937" stroke-width="1.5" />
+    
+    <!-- Title -->
+    <circle cx="28" cy="28" r="14" fill="#F59E0B" fill-opacity="0.15" />
+    <text x="28" y="33" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold" fill="#F59E0B">3</text>
+    <text x="52" y="33" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Birthdate Masking</text>
+    <text x="52" y="50" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94A3B8">KYC age-verification standard</text>
+
+    <!-- Value Display Box -->
+    <g transform="translate(20, 68)">
+      <rect width="300" height="60" rx="10" fill="#030712" stroke="#1F2937" />
+      <text x="14" y="22" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" fill="#64748B">DATE OF BIRTH</text>
+      <text x="14" y="47" font-family="'JetBrains Mono', monospace" font-size="19" font-weight="700" fill="#A7F3D0">XX/XX/1995</text>
+      
+      <circle cx="270" cy="30" r="14" fill="#1F2937" />
+      <ellipse cx="270" cy="30" rx="6" ry="4" fill="none" stroke="#10B981" stroke-width="1.5" />
+    </g>
+
+    <!-- Modes -->
+    <g transform="translate(20, 142)">
+      <rect x="0" y="0" width="145" height="28" rx="6" fill="#1E293B" stroke="#10B981" stroke-width="1" />
+      <text x="10" y="18" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#34D399">✓ dayAndMonth</text>
+
+      <rect x="155" y="0" width="145" height="28" rx="6" fill="#1E293B" stroke="#334155" />
+      <text x="10" y="18" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="500" fill="#94A3B8" transform="translate(155, 0)">yearOnly (15/08/XXXX)</text>
+    </g>
+
+    <text x="20" y="200" font-family="-apple-system, sans-serif" font-size="11" fill="#94A3B8">Modes: <tspan fill="#34D399">dayAndMonth</tspan>, <tspan fill="#CBD5E1">yearOnly</tspan>, <tspan fill="#CBD5E1">full</tspan></text>
+    <text x="20" y="224" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">PrivacyValue.birthdate(value: '15/08/1995')</text>
+  </g>
+
+  <!-- CARD 4: Address Masking (Bottom Center) -->
+  <g transform="translate(425, 390)" filter="url(#shadow)">
+    <rect width="365" height="245" rx="16" fill="url(#cardGrad)" stroke="#1F2937" stroke-width="1.5" />
+    
+    <!-- Title -->
+    <circle cx="28" cy="28" r="14" fill="#8B5CF6" fill-opacity="0.15" />
+    <text x="28" y="33" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold" fill="#A78BFA">4</text>
+    <text x="52" y="33" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Address Masking</text>
+    <text x="52" y="50" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94A3B8">Flat/premise hidden, city &amp; partial PIN kept</text>
+
+    <!-- Value Display Box -->
+    <g transform="translate(20, 68)">
+      <rect width="325" height="66" rx="10" fill="#030712" stroke="#1F2937" />
+      <text x="12" y="20" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" fill="#64748B">COMMUNICATION ADDRESS</text>
+      <text x="12" y="40" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#DDD6FE">Flat ***, ***************, MG Rd,</text>
+      <text x="12" y="56" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#A7F3D0">Bengaluru, Karnataka - 560***</text>
+    </g>
+
+    <g transform="translate(20, 148)">
+      <rect x="0" y="0" width="155" height="28" rx="6" fill="#1E293B" stroke="#334155" />
+      <text x="8" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#94A3B8">Level: <tspan fill="#A78BFA" font-weight="bold">streetAndPremise</tspan></text>
+
+      <rect x="165" y="0" width="160" height="28" rx="6" fill="#1E293B" stroke="#334155" />
+      <text x="8" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#94A3B8" transform="translate(165, 0)">PIN Digits: <tspan fill="#34D399" font-weight="bold">3 ('560***')</tspan></text>
+    </g>
+
+    <text x="20" y="202" font-family="-apple-system, sans-serif" font-size="11" fill="#94A3B8">Protects against shoulder surfing &amp; statement leaks</text>
+    <text x="20" y="224" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">PrivacyValue.address(value: rawAddress)</text>
+  </g>
+
+  <!-- CARD 5: General Masking & Govt IDs (Bottom Right) -->
+  <g transform="translate(815, 390)" filter="url(#shadow)">
+    <rect width="325" height="245" rx="16" fill="url(#cardGrad)" stroke="#1F2937" stroke-width="1.5" />
+    
+    <!-- Title -->
+    <circle cx="28" cy="28" r="14" fill="#EC4899" fill-opacity="0.15" />
+    <text x="28" y="33" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold" fill="#F472B6">5</text>
+    <text x="52" y="33" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">General &amp; Indian IDs</text>
+    <text x="52" y="50" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94A3B8">Official UIDAI &amp; IT Formats</text>
+
+    <!-- Mini ID Badges -->
+    <g transform="translate(18, 68)">
+      <rect width="289" height="34" rx="8" fill="#030712" stroke="#1F2937" />
+      <text x="10" y="21" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#94A3B8">AADHAAR:</text>
+      <text x="75" y="21" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#F472B6">XXXX XXXX 1234</text>
+      <circle cx="270" cy="17" r="8" fill="#10B981" fill-opacity="0.2" />
+      <text x="270" y="20.5" text-anchor="middle" font-size="8" fill="#10B981">✓</text>
+    </g>
+
+    <g transform="translate(18, 108)">
+      <rect width="289" height="34" rx="8" fill="#030712" stroke="#1F2937" />
+      <text x="10" y="21" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#94A3B8">PAN CARD:</text>
+      <text x="75" y="21" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#38BDF8">XXXXX1234X</text>
+      <circle cx="270" cy="17" r="8" fill="#10B981" fill-opacity="0.2" />
+      <text x="270" y="20.5" text-anchor="middle" font-size="8" fill="#10B981">✓</text>
+    </g>
+
+    <g transform="translate(18, 148)">
+      <rect width="289" height="34" rx="8" fill="#030712" stroke="#1F2937" />
+      <text x="10" y="21" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#94A3B8">ACCOUNT:</text>
+      <text x="75" y="21" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#34D399">XXXXXXXX4892</text>
+      <circle cx="270" cy="17" r="8" fill="#10B981" fill-opacity="0.2" />
+      <text x="270" y="20.5" text-anchor="middle" font-size="8" fill="#10B981">✓</text>
+    </g>
+
+    <text x="18" y="205" font-family="-apple-system, sans-serif" font-size="10.5" fill="#94A3B8">Custom start/end visible count &amp; delimiter retention</text>
+    <text x="18" y="224" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">PrivacyMasker.maskAadhaar(str)</text>
+  </g>
+</svg>

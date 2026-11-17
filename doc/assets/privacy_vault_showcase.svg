@@ -1,78 +1,170 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="100%" height="100%">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B0F19" />
-      <stop offset="50%" stop-color="#0F172A" />
-      <stop offset="100%" stop-color="#020617" />
+      <stop offset="0%" stop-color="#080C14" />
+      <stop offset="50%" stop-color="#0E1626" />
+      <stop offset="100%" stop-color="#030712" />
     </linearGradient>
     <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#10B981" />
       <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#0B0F19" />
     </linearGradient>
     <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#000000" flood-opacity="0.65" />
     </filter>
   </defs>
 
+  <!-- Background -->
   <rect width="1200" height="630" fill="url(#bg)" />
 
-  <g stroke="#334155" stroke-opacity="0.15" stroke-width="1">
+  <!-- Subtle Blueprint Grid -->
+  <g stroke="#334155" stroke-opacity="0.18" stroke-width="1">
     <path d="M0,70 H1200 M0,140 H1200 M0,210 H1200 M0,280 H1200 M0,350 H1200 M0,420 H1200 M0,490 H1200 M0,560 H1200" />
     <path d="M70,0 V630 M140,0 V630 M210,0 V630 M280,0 V630 M350,0 V630 M420,0 V630 M490,0 V630 M560,0 V630 M630,0 V630 M700,0 V630 M770,0 V630 M840,0 V630 M910,0 V630 M980,0 V630 M1050,0 V630 M1120,0 V630" />
   </g>
 
-  <circle cx="600" cy="315" r="280" fill="#10B981" opacity="0.08" />
+  <circle cx="320" cy="240" r="260" fill="#10B981" opacity="0.07" />
+  <circle cx="950" cy="400" r="220" fill="#06B6D4" opacity="0.05" />
 
+  <!-- Main Container -->
   <g filter="url(#cardShadow)">
-    <rect x="150" y="75" width="900" height="480" rx="24" fill="#0F172A" stroke="#1E293B" stroke-width="2" />
-    <rect x="150" y="75" width="900" height="480" rx="24" fill="none" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.4" />
+    <rect x="70" y="55" width="1060" height="520" rx="24" fill="#0F172A" stroke="#1E293B" stroke-width="2" />
+    <rect x="70" y="55" width="1060" height="520" rx="24" fill="none" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.3" />
   </g>
 
-  <text x="190" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="28" fill="#F8FAFC" letter-spacing="-0.5">
-    flutter_privacy_vault
-  </text>
-  <text x="190" y="160" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="14" fill="#94A3B8">
-    Fintech Privacy &amp; Security Shield • App-Switcher Blur • Inactivity Locks • Sensitive Field Masking
-  </text>
+  <!-- Left Column: Title & Key Badges -->
+  <g transform="translate(110, 100)">
+    <!-- Header Shield Icon -->
+    <rect width="48" height="48" rx="12" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1.5" />
+    <path d="M24 12 L36 17 V26 C36 33.5 30.8 38.5 24 41 C17.2 38.5 12 33.5 12 26 V17 Z" fill="none" stroke="#10B981" stroke-width="2.5" />
+    <path d="M20 25.5 L22.5 28 L28 22.5" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
 
-  <g transform="translate(740, 108)">
-    <rect width="130" height="28" rx="14" fill="#065F46" fill-opacity="0.3" stroke="#10B981" stroke-width="1" />
-    <text x="65" y="18" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#34D399">ZERO LEAK</text>
-  </g>
-  <g transform="translate(885, 108)">
-    <rect width="125" height="28" rx="14" fill="#1E3A8A" fill-opacity="0.3" stroke="#3B82F6" stroke-width="1" />
-    <text x="62" y="18" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#60A5FA">APP SWITCHER</text>
-  </g>
+    <text x="64" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="28" fill="#F8FAFC" letter-spacing="-0.5">
+      flutter_privacy_vault
+    </text>
+    <text x="64" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="14" fill="#94A3B8">
+      Bank-Grade PII Masking • App-Switcher Shield • Biometric &amp; Inactivity Auto-Lock
+    </text>
 
-  <!-- Showcase Cards Simulation -->
-  <g transform="translate(220, 210)">
-    <!-- Shield Icon & Lock Status -->
-    <g transform="translate(120, 100)">
-      <path d="M 0 -60 L 50 -40 L 50 20 C 50 60 0 90 0 90 C 0 90 -50 60 -50 20 L -50 -40 Z" fill="url(#shieldGrad)" />
-      <text x="0" y="22" text-anchor="middle" font-size="34">🔒</text>
-      <text x="0" y="125" text-anchor="middle" font-family="-apple-system, sans-serif" font-weight="800" font-size="15" fill="#F8FAFC">Vault Protected</text>
+    <!-- 5 Bank Masking Feature Cards -->
+    <g transform="translate(0, 80)">
+      <!-- Item 1: Mobile -->
+      <g transform="translate(0, 0)">
+        <rect width="470" height="52" rx="10" fill="#030712" stroke="#1F2937" />
+        <text x="14" y="20" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#64748B">1. MOBILE NUMBER (HDFC/SBI)</text>
+        <text x="14" y="40" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#67E8F9">+91 XXXXXX3210</text>
+        <rect x="360" y="14" width="56" height="22" rx="6" fill="#10B981" fill-opacity="0.15" />
+        <text x="388" y="29" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#34D399">MASKED</text>
+        <ellipse cx="438" cy="25" rx="6" ry="4" fill="none" stroke="#10B981" stroke-width="1.2" />
+      </g>
+
+      <!-- Item 2: Email -->
+      <g transform="translate(0, 62)">
+        <rect width="470" height="52" rx="10" fill="#030712" stroke="#1F2937" />
+        <text x="14" y="20" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#64748B">2. EMAIL ADDRESS</text>
+        <text x="14" y="40" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#FCD34D">g********k@hdfcbank.com</text>
+        <rect x="360" y="14" width="56" height="22" rx="6" fill="#10B981" fill-opacity="0.15" />
+        <text x="388" y="29" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#34D399">MASKED</text>
+        <ellipse cx="438" cy="25" rx="6" ry="4" fill="none" stroke="#10B981" stroke-width="1.2" />
+      </g>
+
+      <!-- Item 3: Birthdate -->
+      <g transform="translate(0, 124)">
+        <rect width="470" height="52" rx="10" fill="#030712" stroke="#1F2937" />
+        <text x="14" y="20" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#64748B">3. BIRTHDATE (KYC AGE VERIFIED)</text>
+        <text x="14" y="40" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#A7F3D0">XX/XX/1995</text>
+        <rect x="360" y="14" width="56" height="22" rx="6" fill="#10B981" fill-opacity="0.15" />
+        <text x="388" y="29" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#34D399">MASKED</text>
+        <ellipse cx="438" cy="25" rx="6" ry="4" fill="none" stroke="#10B981" stroke-width="1.2" />
+      </g>
+
+      <!-- Item 4: Address -->
+      <g transform="translate(0, 186)">
+        <rect width="470" height="52" rx="10" fill="#030712" stroke="#1F2937" />
+        <text x="14" y="20" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#64748B">4. ADDRESS (STREET &amp; PREMISE)</text>
+        <text x="14" y="40" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#DDD6FE">Flat ***, ***************, Bengaluru 560***</text>
+        <rect x="360" y="14" width="56" height="22" rx="6" fill="#10B981" fill-opacity="0.15" />
+        <text x="388" y="29" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#34D399">MASKED</text>
+        <ellipse cx="438" cy="25" rx="6" ry="4" fill="none" stroke="#10B981" stroke-width="1.2" />
+      </g>
+
+      <!-- Item 5: General / Aadhaar / PAN -->
+      <g transform="translate(0, 248)">
+        <rect width="470" height="52" rx="10" fill="#030712" stroke="#1F2937" />
+        <text x="14" y="20" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#64748B">5. GENERAL &amp; GOVT IDS (AADHAAR / PAN)</text>
+        <text x="14" y="40" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#F472B6">XXXX XXXX 1234  •  XXXXX1234X</text>
+        <rect x="360" y="14" width="56" height="22" rx="6" fill="#10B981" fill-opacity="0.15" />
+        <text x="388" y="29" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#34D399">MASKED</text>
+        <ellipse cx="438" cy="25" rx="6" ry="4" fill="none" stroke="#10B981" stroke-width="1.2" />
+      </g>
     </g>
 
-    <!-- Masked Account Data Card -->
-    <g transform="translate(320, 30)">
-      <rect width="400" height="220" rx="16" fill="#020617" stroke="#1E293B" stroke-width="1.5" />
-      
-      <text x="24" y="42" font-family="-apple-system, sans-serif" font-weight="600" font-size="13" fill="#64748B">CHECKING ACCOUNT</text>
-      <rect x="310" y="26" width="65" height="22" rx="11" fill="#1E293B" />
-      <text x="342" y="41" text-anchor="middle" font-family="monospace" font-size="11" fill="#34D399">Masked</text>
+    <text x="0" y="415" font-family="'JetBrains Mono', monospace" font-size="13" fill="#34D399">
+      $ flutter pub add flutter_privacy_vault
+    </text>
+  </g>
 
-      <!-- Masked Balance with Toggle -->
-      <text x="24" y="90" font-family="monospace" font-weight="800" font-size="26" fill="#F8FAFC">••••••••</text>
-      
-      <line x1="24" y1="120" x2="376" y2="120" stroke="#1E293B" stroke-width="1" />
+  <!-- Right Column: Interactive Phone Mockup & Shield Overlay -->
+  <g transform="translate(630, 95)">
+    <!-- Phone Chassis -->
+    <rect width="450" height="430" rx="20" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Phone Top Bar -->
+    <rect x="18" y="16" width="414" height="46" rx="8" fill="#1E293B" />
+    <circle cx="36" cy="39" r="6" fill="#10B981" />
+    <text x="50" y="43" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Shield &amp; Auto-Lock Active</text>
+    <rect x="330" y="27" width="90" height="24" rx="12" fill="#064E3B" stroke="#10B981" stroke-width="1" />
+    <text x="375" y="43" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#34D399">PROTECTED</text>
 
-      <!-- PIN Code Dots -->
-      <text x="24" y="155" font-family="-apple-system, sans-serif" font-weight="600" font-size="12" fill="#94A3B8">Inactivity auto-lock active (30s)</text>
-      <g transform="translate(24, 175)">
+    <!-- Account Balance Mask -->
+    <g transform="translate(18, 76)">
+      <rect width="414" height="100" rx="12" fill="#030712" stroke="#1F2937" />
+      <text x="20" y="28" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#94A3B8">TOTAL BALANCE (TAP TO REVEAL)</text>
+      <text x="20" y="68" font-family="'JetBrains Mono', monospace" font-size="28" font-weight="800" fill="#F8FAFC">••••••••••••</text>
+      <circle cx="370" cy="54" r="18" fill="#1F2937" />
+      <ellipse cx="370" cy="54" rx="8" ry="5.5" fill="none" stroke="#10B981" stroke-width="1.8" />
+    </g>
+
+    <!-- PIN Pad Mini Preview -->
+    <g transform="translate(18, 190)">
+      <rect width="414" height="215" rx="12" fill="#0F172A" stroke="#1E293B" />
+      <text x="20" y="28" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#E2E8F0">Inactivity PIN Shield (Shuffled Keypad)</text>
+      <text x="20" y="46" font-family="-apple-system, sans-serif" font-size="10.5" fill="#64748B">Anti-shoulder-surfing randomized layout</text>
+
+      <!-- 4 PIN Dots -->
+      <g transform="translate(20, 60)">
         <circle cx="10" cy="10" r="6" fill="#10B981" />
-        <circle cx="35" cy="10" r="6" fill="#10B981" />
-        <circle cx="60" cy="10" r="6" fill="#10B981" />
-        <circle cx="85" cy="10" r="6" fill="#334155" />
+        <circle cx="34" cy="10" r="6" fill="#10B981" />
+        <circle cx="58" cy="10" r="6" fill="#10B981" />
+        <circle cx="82" cy="10" r="6" fill="#334155" />
+      </g>
+
+      <!-- Keypad Grid Preview -->
+      <g transform="translate(140, 60)">
+        <rect x="0" y="0" width="55" height="34" rx="6" fill="#1E293B" />
+        <text x="27.5" y="22" text-anchor="middle" font-family="monospace" font-weight="bold" fill="#F8FAFC">7</text>
+        <rect x="65" y="0" width="55" height="34" rx="6" fill="#1E293B" />
+        <text x="92.5" y="22" text-anchor="middle" font-family="monospace" font-weight="bold" fill="#F8FAFC">2</text>
+        <rect x="130" y="0" width="55" height="34" rx="6" fill="#1E293B" />
+        <text x="157.5" y="22" text-anchor="middle" font-family="monospace" font-weight="bold" fill="#F8FAFC">9</text>
+
+        <rect x="0" y="42" width="55" height="34" rx="6" fill="#1E293B" />
+        <text x="27.5" y="64" text-anchor="middle" font-family="monospace" font-weight="bold" fill="#F8FAFC">1</text>
+        <rect x="65" y="42" width="55" height="34" rx="6" fill="#1E293B" />
+        <text x="92.5" y="64" text-anchor="middle" font-family="monospace" font-weight="bold" fill="#F8FAFC">8</text>
+        <rect x="130" y="42" width="55" height="34" rx="6" fill="#1E293B" />
+        <text x="157.5" y="64" text-anchor="middle" font-family="monospace" font-weight="bold" fill="#F8FAFC">4</text>
+
+        <rect x="0" y="84" width="55" height="34" rx="6" fill="#1E293B" />
+        <text x="27.5" y="106" text-anchor="middle" font-family="monospace" font-weight="bold" fill="#F8FAFC">3</text>
+        <rect x="65" y="84" width="55" height="34" rx="6" fill="#1E293B" />
+        <text x="92.5" y="106" text-anchor="middle" font-family="monospace" font-weight="bold" fill="#F8FAFC">0</text>
+        <rect x="130" y="84" width="55" height="34" rx="6" fill="#1E293B" />
+        <text x="157.5" y="106" text-anchor="middle" font-family="monospace" font-weight="bold" fill="#F8FAFC">5</text>
       </g>
     </g>
   </g>
