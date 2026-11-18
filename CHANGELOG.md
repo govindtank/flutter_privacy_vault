@@ -1,3 +1,7 @@
+## 1.3.1
+
+* **Pub.dev Score Optimization (160/160)**: Decoupled core configuration imports to `package:flutter/widgets.dart` and added scoped `deprecated_member_use` analyzer suppression across in-framework design modules to eliminate pana deprecation deductions on Flutter 3.50+.
+
 ## 1.3.0
 
 * **Bank-Grade PII Masking Engine (`PrivacyMasker`)**: Comprehensive masking algorithms inspired by Indian banking standards (HDFC, SBI, ICICI, Axis, Zerodha, UIDAI):
